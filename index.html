@@ -305,6 +305,11 @@
       display: inline-block;
       padding: 1.5rem;
       max-width: 500px;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    }
+    .education-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
     .education-year {
       font-size: 0.95rem;
@@ -394,6 +399,8 @@
       display: flex;
       flex-direction: column;
       gap: 3rem;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
     }
     .experience-timeline::before {
       content: "";
@@ -427,6 +434,11 @@
       display: inline-block;
       padding: 1.5rem;
       max-width: 800px; /* increased width for more space */
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    }
+    .exp-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
     .exp-year {
       font-size: 0.9rem;
@@ -835,7 +847,6 @@
   
     <!-- Timeline container -->
     <div class="experience-timeline">
-
       <!-- ITEM 1 -->
       <div class="experience-item">
         <div class="exp-circle"></div>

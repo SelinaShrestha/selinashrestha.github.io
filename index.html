@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Portfolio of Selina Shrestha, focusing on Embedded & Cyber-Physical Systems" />
+  <meta name="keywords" content="Embedded Systems, Cyber-Physical, Security, IoT, Zero Trust, Engineer" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selina Shrestha | Embedded &amp; Cyber-Physical Systems</title>
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- FONT AWESOME -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-8C6tkNUP/0hGhFy1R0o+bb9lEfM4XyAb2EvEK/kUQyGqfNgFLg6CxyPDTDz4kZPS9KHItqo9j8uS6jiUJH3kNQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <style>
+    :root {
+      --primary-color: #2C3E50;       /* Dark Blue-ish */
+      --accent-color: #16A085;        /* Teal/Green accent */
+      --light-color: #ECF0F1;         /* Light grayish background */
+      --dark-color: #333;            /* Dark text color */
+      --text-color: #555;            /* Body text color */
+      --heading-font: 'Poppins', sans-serif;
+      --body-font: 'Poppins', sans-serif;
+      --transition-speed: 0.3s;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--body-font);
+      color: var(--text-color);
+      background-color: #fff;
+      line-height: 1.6;
+    }
+
+    /* ========== HEADER ========== */
+    header {
+      position: fixed;
+      width: 100%;
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      z-index: 999;
+    }
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+    }
+    nav .nav-left h1 {
+      font-family: var(--heading-font);
+      font-weight: 700;
+      font-size: 1.7rem;
+      color: var(--primary-color);
+    }
+    nav .nav-right ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+    nav .nav-right li {
+      transition: color var(--transition-speed);
+    }
+    nav .nav-right a {
+      text-decoration: none;
+      color: var(--dark-color);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color var(--transition-speed);
+    }
+    nav .nav-right a:hover {
+      color: var(--accent-color);
+    }
+
+    /* ========== HERO SECTION ========== */
+    .hero-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      min-height: 100vh;
+      padding-top: 5rem; /* offset for fixed header */
+      background: linear-gradient(135deg, var(--primary-color), #34495E);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at bottom right, rgba(255,255,255,0.05) 10%, transparent 40%),
+        radial-gradient(circle at top left, rgba(255,255,255,0.05) 10%, transparent 40%);
+      pointer-events: none;
+    }
+    .hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      z-index: 1;
+    }
+    .hero-text {
+      flex: 1 1 400px;
+      margin: 1rem;
+      animation: fadeInDown 0.8s ease forwards;
+      opacity: 0;
+    }
+    .hero-text h2 {
+      font-family: var(--heading-font);
+      font-size: 2.7rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+    .hero-text h3 {
+      font-family: var(--heading-font);
+      font-size: 1.2rem;
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+      color: #eee;
+    }
+    .hero-text p {
+      margin-bottom: 1.5rem;
+      color: #f0f0f0;
+      line-height: 1.7;
+    }
+    .hero-text a {
+      background-color: var(--accent-color);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: background-color var(--transition-speed);
+    }
+    .hero-text a:hover {
+      background-color: #149174; /* darken accent slightly */
+    }
+    .hero-image {
+      flex: 1 1 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem;
+      animation: fadeInUp 0.8s ease forwards;
+      opacity: 0;
+    }
+    .hero-image img {
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+
+    /* ========== SECTION HEADERS ========== */
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      animation: fadeInUp 0.8s ease forwards;
+      opacity: 0;
+    }
+    .section-header h2 {
+      font-family: var(--heading-font);
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+    .section-header p {
+      color: var(--text-color);
+      max-width: 600px;
+      margin: 0.5rem auto 0 auto;
+      line-height: 1.4;
+    }
+
+    hr.section-divider {
+      margin: 3rem auto;
+      width: 60%;
+      border: none;
+      border-top: 2px solid var(--light-color);
+    }
+
+    /* ========== SKILLS SECTION ========== */
+    .skills-section {
+      padding: 4rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      justify-items: center;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+    }
+    .skills-card {
+      background-color: var(--light-color);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 2rem;
+      width: 100%;
+      max-width: 500px;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    }
+    .skills-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .skills-card h3 {
+      font-family: var(--heading-font);
+      font-size: 1.4rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+    .skill-item {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.9rem;
+      color: var(--dark-color);
+      transition: background-color var(--transition-speed);
+    }
+    .skill-item:hover {
+      background-color: #f2f2f2;
+    }
+
+    /* ========== EDUCATION SECTION ========== */
+    .education-section {
+      padding: 4rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+    }
+    .education-timeline {
+      position: relative;
+      margin: 0 auto;
+      width: 80%;
+      padding: 2rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem; /* more spacing so it looks less empty */
+    }
+    .education-timeline::before {
+      content: "";
+      position: absolute;
+      left: 35px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background-color: var(--accent-color);
+    }
+    .education-item {
+      position: relative;
+      padding-left: 80px; /* space for circle and line */
+    }
+    .edu-circle {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: var(--accent-color);
+      border: 3px solid #fff;
+      border-radius: 50%;
+      left: 27px;
+      top: 0;
+      transform: translateY(0);
+      animation: pulseCircle 2s infinite;
+    }
+    .education-card {
+      background-color: #f9fbfc;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      display: inline-block;
+      padding: 1.5rem;
+      max-width: 500px;
+    }
+    .education-year {
+      font-size: 0.95rem;
+      color: var(--accent-color);
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .education-card h3 {
+      font-family: var(--heading-font);
+      font-size: 1.2rem;
+      color: var(--primary-color);
+      margin-bottom: 0.3rem;
+    }
+    .education-card p {
+      margin-bottom: 0.3rem;
+      color: var(--text-color);
+      line-height: 1.4;
+    }
+    .education-extra {
+      margin-top: 0.8rem;
+      font-size: 0.85rem;
+      color: #777;
+      line-height: 1.4;
+    }
+
+    /* ========== PUBLICATIONS SECTION ========== */
+    .publications-section {
+      padding: 4rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .pub-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+    }
+    .pub-card {
+      background-color: var(--light-color);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .pub-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .pub-card h4 {
+      font-family: var(--heading-font);
+      font-size: 1.1rem;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+    .pub-card p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+    .pub-card a {
+      text-decoration: none;
+      color: var(--accent-color);
+      font-weight: 600;
+    }
+    .pub-card a:hover {
+      text-decoration: underline;
+    }
+
+    /* ========== EXPERIENCE SECTION ========== */
+    .experience-section {
+      padding: 4rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+    }
+    .experience-timeline {
+      position: relative;
+      margin: 0 auto;
+      width: 90%; /* more width so cards can expand */
+      padding: 2rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+    .experience-timeline::before {
+      content: "";
+      position: absolute;
+      left: 35px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background-color: var(--accent-color);
+    }
+    .experience-item {
+      position: relative;
+      padding-left: 80px;
+    }
+    .exp-circle {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: var(--accent-color);
+      border: 3px solid #fff;
+      border-radius: 50%;
+      left: 27px;
+      top: 0;
+      transform: translateY(0);
+      animation: pulseCircle 2s infinite;
+    }
+    .exp-card {
+      background-color: #f9fbfc;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      display: inline-block;
+      padding: 1.5rem;
+      max-width: 800px; /* increased width for more space */
+    }
+    .exp-year {
+      font-size: 0.9rem;
+      color: var(--accent-color);
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    .exp-card h3 {
+      font-family: var(--heading-font);
+      font-size: 1.2rem;
+      color: var(--primary-color);
+      margin-bottom: 0.3rem;
+    }
+    .exp-card h4 {
+      font-family: var(--heading-font);
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 0.5rem;
+    }
+    .exp-card p {
+      color: var(--text-color);
+      font-size: 0.95rem;
+      line-height: 1.4;
+      margin-bottom: 1rem;
+    }
+    .exp-tech {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #777;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    /* ========== CONTACT SECTION ========== */
+    .contact-section {
+      padding: 6rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .contact-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+    .contact-icons {
+      display: flex;
+      gap: 2rem;
+      font-size: 1.8rem;
+      color: var(--accent-color);
+      flex-wrap: wrap;
+      justify-content: center;
+      transition: transform var(--transition-speed), color var(--transition-speed);
+    }
+    .contact-icons a {
+      transition: transform var(--transition-speed), color var(--transition-speed);
+    }
+    .contact-icons a:hover {
+      transform: translateY(-5px);
+      color: #149174;
+    }
+    .contact-form-box {
+      background-color: var(--light-color);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 2rem;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+      max-width: 500px;
+      width: 100%;
+    }
+    .contact-form-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .contact-form label {
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+      color: var(--dark-color);
+      text-align: left;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 0.75rem;
+      font-family: var(--body-font);
+      font-size: 0.95rem;
+      resize: none;
+      width: 100%;
+    }
+    .center-button {
+      display: block;
+      margin: 0 auto;
+      padding: 10px 20px;
+    }
+    .contact-form button {
+      width: fit-content;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--accent-color);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color var(--transition-speed);
+      margin-top: 1rem;
+    }
+    .contact-form button:hover {
+      background-color: #149174;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background-color: #f5f5f5;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
+    }
+    footer .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    footer .footer-content p {
+      margin-bottom: 0.5rem;
+      color: #777;
+      font-size: 0.95rem;
+    }
+    footer .footer-content a {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    footer .footer-content a:hover {
+      text-decoration: underline;
+    }
+
+    /* ========== ANIMATIONS ========== */
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes pulseCircle {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 992px) {
+      .hero-section {
+        padding-top: 4rem;
+      }
+      .experience-timeline {
+        width: 95%;
+      }
+    }
+    @media (max-width: 600px) {
+      nav .nav-right ul {
+        gap: 0.8rem;
+      }
+      .hero-text h2 {
+        font-size: 2rem;
+      }
+      .hero-image img {
+        width: 220px;
+        height: 220px;
+      }
+      .contact-icons {
+        gap: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <div class="nav-left">
+        <h1>Selina Shrestha</h1>
+      </div>
+      <div class="nav-right">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <h2>Hi, I'm Selina</h2>
+        <h3>Embedded &amp; Cyber-Physical Systems Engineer</h3>
+        <p>
+          Passionate about secure mesh networks, real-time embedded systems, 
+          and autonomous drone safety. I have multiple IEEE publications 
+          and hands-on experience in Zero Trust security. I'm dedicated to 
+          building innovative, security-focused solutions that shape 
+          our connected future.
+        </p>
+        <a href="#contact">Contact Me</a>
+      </div>
+      <div class="hero-image">
+        <img src="profile.jpeg" alt="Profile Photo of Selina" />
+      </div>
+    </div>
+  </section>
+  <hr class="section-divider" />
+
+  <!-- SKILLS SECTION -->
+  <section id="skills" class="skills-section">
+    <div class="section-header">
+      <h2>Core Skills</h2>
+      <p>A snapshot of my most relevant skill sets</p>
+    </div>
+    <div class="skills-container">
+      <!-- Card 1 -->
+      <div class="skills-card">
+        <h3>Software &amp; Programming</h3>
+        <div class="skills-list">
+          <span class="skill-item">Python</span>
+          <span class="skill-item">C/C++</span>
+          <span class="skill-item">SystemC</span>
+          <span class="skill-item">Shell Scripting</span>
+          <span class="skill-item">MATLAB</span>
+          <span class="skill-item">ML (Keras, Scikit-Learn)</span>
+          <span class="skill-item">CLIPS</span>
+          <span class="skill-item">NumPy / Pandas</span>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="skills-card">
+        <h3>Hardware &amp; Security</h3>
+        <div class="skills-list">
+          <span class="skill-item">Embedded (RTOS, IoT Devices)</span>
+          <span class="skill-item">Zero Trust</span>
+          <span class="skill-item">MACsec</span>
+          <span class="skill-item">Continuous Auth</span>
+          <span class="skill-item">Raspberry Pi</span>
+          <span class="skill-item">Arduino / ESP</span>
+          <span class="skill-item">ROS</span>
+          <span class="skill-item">Docker / Git</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr class="section-divider" />
+
+  <!-- EDUCATION SECTION -->
+  <section id="education" class="education-section">
+    <div class="section-header">
+      <h2>Education</h2>
+      <p>My academic journey and focus areas</p>
+    </div>
+    <div class="education-timeline">
+      <!-- Item 1 -->
+      <div class="education-item">
+        <div class="edu-circle"></div>
+        <div class="education-card">
+          <span class="education-year">2024 - 2025</span>
+          <h3>University of California, Irvine</h3>
+          <p><strong>M.S. in Embedded &amp; Cyber Physical Systems </strong></p>
+          <p><strong>GPA: 4.0/4.0</strong></p>
+          <p>Embedded Design, IoT, Wireless Sensor Networks</p>
+          <p class="education-extra">
+            Working on specialized security modules for next-gen 
+            cyber-physical integrations, exploring synergy between 
+            real-time OS &amp; zero-trust frameworks.
+          </p>
+        </div>
+      </div>
+      <!-- Item 2 -->
+      <div class="education-item">
+        <div class="edu-circle"></div>
+        <div class="education-card">
+          <span class="education-year">2020 - 2022</span>
+          <h3>Khalifa University</h3>
+          <p><strong>M.Sc. in Electrical &amp; Computer Engineering</strong></p>
+          <p><strong>GPA: 3.96/4.0</strong></p>
+          <p>Deep Learning, Real-time Embedded Systems, Computer Vision</p>
+          <p class="education-extra">
+            Investigated advanced neural network architectures for UAV 
+            detection and classification, bridging hardware constraints 
+            and AI-driven optimization.
+          </p>
+        </div>
+      </div>
+      <!-- Item 3 -->
+      <div class="education-item">
+        <div class="edu-circle"></div>
+        <div class="education-card">
+          <span class="education-year">2014 - 2018</span>
+          <h3>IOE, Pulchowk Campus</h3>
+          <p><strong>B.E. in Electronics &amp; Communication</strong></p>
+          <p><strong>GPA: 3.6/4.0</strong></p>
+          <p>Advanced Electronics, Telecommunications, Embedded Programming</p>
+          <p class="education-extra">
+            Laid foundational experience in circuit design, 
+            microcontroller programming, and communications protocols.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr class="section-divider" />
+
+  <!-- PUBLICATIONS SECTION -->
+  <section id="publications" class="publications-section">
+    <div class="section-header">
+      <h2>Publications &amp; Research</h2>
+      <p>Highlighted works demonstrating my research efforts</p>
+    </div>
+    <div class="pub-grid">
+      <!-- Card 1 -->
+      <div class="pub-card">
+        <h4>Autoencoder-based Spatial Modulation for Next-Gen Wireless</h4>
+        <p>
+          Proposed an autoencoder architecture enhancing Spatial Modulation 
+          under high antenna correlation, boosting reliability in IoT environments.
+        </p>
+        <a href="https://ieeexplore.ieee.org/document/10504531" target="_blank">
+          IEEE IoT Journal
+        </a>
+      </div>
+      <!-- Card 2 -->
+      <div class="pub-card">
+        <h4>Crowd-Based Efficient Fault-Proof Localization for IoT &amp; MCS</h4>
+        <p>
+          Developed a novel anomaly detection mechanism for crowd-sourced 
+          localization, providing near-real-time positioning accuracy 
+          in dynamic settings.
+        </p>
+        <a href="https://ieeexplore.ieee.org/document/9408587" target="_blank">
+          IEEE Access
+        </a>
+      </div>
+      <!-- Card 3 -->
+      <div class="pub-card">
+        <h4>Lightweight Continuous Authentication for Mesh Networks</h4>
+        <p>
+          Achieved minimal overhead with a single-hash protocol for 
+          ongoing node authentication, offering strong security 
+          with negligible CPU cost.
+        </p>
+        <a href="https://ieeexplore.ieee.org/document/964189" target="_blank">
+          IEEE Xplore
+        </a>
+      </div>
+      <!-- Card 4 -->
+      <div class="pub-card">
+        <h4>Drone Tracking &amp; Verification with Deep Neural Networks</h4>
+        <p>
+          Real-time validation of in-flight drones using Siamese 
+          RPN-based tracking, ensuring reliable command authentication 
+          in autonomous operations.
+        </p>
+        <a href="#" target="_blank">Conference Paper</a>
+      </div>
+    </div>
+  </section>
+  <hr class="section-divider" />
+
+  <!-- EXPERIENCE SECTION (REWRITTEN) -->
+  <section id="experience" class="experience-section">
+    <div class="section-header">
+      <h2>Experience</h2>
+      <p>My professional background at a glance</p>
+    </div>
+  
+    <!-- Timeline container -->
+    <div class="experience-timeline">
+
+      <!-- ITEM 1 -->
+      <div class="experience-item">
+        <div class="exp-circle"></div>
+        <div class="exp-card">
+          <!-- Time Period -->
+          <div class="exp-year">November 2022 - August 2024</div>
+          <!-- Role + Company -->
+          <h3>Security Stack Integration Engineer</h3>
+          <h4>Technology Innovation Institute (Abu Dhabi, UAE)</h4>
+          <!-- Tools / Publications -->
+          <p class="exp-tech">
+            <strong>Tools:</strong> Python, Bash, CLIPS+ML, Zero Trust, Dual-Layer MACsec
+          </p>
+          <!-- Paragraph 1 -->
+          <p>
+            Developed proof-of-concept (TRL4) security &amp; safety software 
+            for mesh networks and autonomous drones. Integrated mutual and 
+            continuous authentication features, along with behavior monitoring 
+            and quarantine mechanisms, to maintain minimal performance overhead 
+            in real-time scenarios.
+          </p>
+          <!-- Paragraph 2 -->
+          <p>
+            Spearheaded dual-layer MACsec architecture for B.A.T.M.A.N IV routing, 
+            enhancing overall network resilience. Demonstrated a 40% reduction 
+            in the vulnerability window through rigorous testing and simulations, 
+            while publishing internal best-practice guides to accelerate 
+            Zero Trust adoption.
+          </p>
+        </div>
+      </div>
+
+      <!-- ITEM 2 -->
+      <div class="experience-item">
+        <div class="exp-circle"></div>
+        <div class="exp-card">
+          <!-- Time Period -->
+          <div class="exp-year">June 2021 - September 2021</div>
+          <!-- Role + Company -->
+          <h3>Security Intern</h3>
+          <h4>Technology Innovation Institute (Abu Dhabi, UAE)</h4>
+          <!-- Tools / Publications -->
+          <p class="exp-tech">
+            <strong>Publication:</strong> 
+            <a href="https://ieeexplore.ieee.org/document/964189" target="_blank">IEEE (IoT Security)</a>
+          </p>
+          <!-- Paragraph 1 -->
+          <p>
+            Created a novel lightweight continuous authentication scheme for 
+            mesh networks, employing just one hash, one MAC, and minimal 
+            arithmetic operations to maintain high throughput and real-time 
+            performance.
+          </p>
+          <!-- Paragraph 2 -->
+          <p>
+            Achieved a 30% reduction in CPU and bandwidth usage compared to 
+            standard cryptographic protocols, ensuring robust security 
+            without sacrificing network efficiency. The resulting approach 
+            was published in IEEE and garnered citation within IoT communities.
+          </p>
+        </div>
+      </div>
+
+      <!-- ITEM 3 -->
+      <div class="experience-item">
+        <div class="exp-circle"></div>
+        <div class="exp-card">
+          <!-- Time Period -->
+          <div class="exp-year">October 2018 - August 2020</div>
+          <!-- Role + Company -->
+          <h3>Software Engineer</h3>
+          <h4>Logic Information Systems (Now Accenture), Nepal</h4>
+          <!-- Tools / Publications -->
+          <p class="exp-tech">
+            <strong>Tools:</strong> SQL, Data Analytics, Power BI
+          </p>
+          <!-- Paragraph 1 -->
+          <p>
+            Designed and implemented interactive BI dashboards and 
+            data-analysis reports to enhance enterprise-level insights 
+            and decision-making capabilities. Optimized SQL queries to 
+            significantly reduce response times and boost database 
+            scalability across large data sets.
+          </p>
+          <!-- Paragraph 2 -->
+          <p>
+            Drove a 40% decrease in average query execution time, 
+            enabling near real-time analytics for clients. 
+            Conducted in-house SQL training sessions for over 30 new hires, 
+            elevating overall data management and analytics proficiency.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <hr class="section-divider" />
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact-section">
+    <div class="section-header">
+      <h2>Contact Me</h2>
+      <p>Feel free to connect via email, phone, or social platforms. Or send a direct message!</p>
+    </div>
+
+    <div class="contact-wrapper">
+      <!-- Icons row -->
+      <div class="contact-icons">
+        <a href="mailto:shresth4@uci.edu" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="tel:4153165944" title="Phone">
+          <i class="fas fa-phone"></i>
+        </a>
+        <a href="https://www.linkedin.com" target="_blank" title="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/your-github" target="_blank" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+
+      <!-- Form box -->
+      <div class="contact-form-box">
+        <form class="contact-form" action="#" method="post">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Your Name" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Your Email" required />
+
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Your Message" rows="6" required></textarea>
+
+          <button type="submit" class="center-button">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <hr class="section-divider" />
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; <span id="currentYear"></span> Selina Shrestha. All Rights Reserved.</p>
+      <p>
+        <a href="tel:4153165944">(415) 316-5944</a>
+        &middot;
+        <a href="mailto:shresth4@uci.edu">shresth4@uci.edu</a>
+        &middot;
+        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- JS FOR DYNAMIC YEAR -->
+  <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

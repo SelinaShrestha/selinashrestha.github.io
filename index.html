@@ -16,13 +16,7 @@
   />
 
   <!-- FONT AWESOME -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-    integrity="sha512-8C6tkNUP/0hGhFy1R0o+bb9lEfM4XyAb2EvEK/kUQyGqfNgFLg6CxyPDTDz4kZPS9KHItqo9j8uS6jiUJH3kNQ=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+  <script src="https://kit.fontawesome.com/d9b8a6c327.js" crossorigin="anonymous"></script>
 
   <style>
     :root {
@@ -606,6 +600,41 @@
       background-color: #149174;
     }
 
+    .contact-section {
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .contact-icons a {
+      display: flex;
+      align-items: center;
+      color: #333;
+      text-decoration: none;
+      transition: transform 0.3s, color 0.3s;
+      gap: 0.5rem;
+    }
+
+    .contact-icons a:hover {
+      color: var(--accent-color);
+      transform: translateY(-2px);
+    }
+
+    .contact-icons i {
+      font-size: 1.5rem;
+    }
+
+    .contact-icons span {
+      font-size: 1rem;
+    }
+
     /* ========== FOOTER ========== */
     footer {
       background-color: #f5f5f5;
@@ -714,8 +743,8 @@
           <li><a href="#hero">Home</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#education">Education</a></li>
-          <li><a href="#publications">Publications</a></li>
           <li><a href="#experience">Experience</a></li>
+          <li><a href="#publications">Publications</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -728,9 +757,9 @@
     <div class="hero-content">
       <div class="hero-text">
         <h2>Hi, I'm Selina</h2>
-        <h3>Embedded &amp; Cyber-Physical Systems Engineer</h3>
+        <!--<h3>Embedded &amp; Cyber-Physical Systems Engineer</h3>-->
         <p>
-          Passionate about secure mesh networks, real-time embedded systems,
+          I am a software engineer passionate about secure mesh networks, real-time embedded systems,
           and autonomous drone safety. I have multiple IEEE publications
           and hands-on experience in Zero Trust security. I'm dedicated to
           building innovative, security-focused solutions that shape
@@ -765,6 +794,11 @@
           <span class="skill-item">CLIPS</span>
           <span class="skill-item">Linux</span>
           <span class="skill-item">NumPy / Pandas</span>
+          <span class="skill-item">SQL</span>
+          <span class="skill-item">Linux</span>
+          <span class="skill-item">ROS</span>
+          <span class="skill-item">Docker</span>
+
         </div>
       </div>
       <!-- Card 2 -->
@@ -777,8 +811,6 @@
           <span class="skill-item">Continuous Auth</span>
           <span class="skill-item">Raspberry Pi</span>
           <span class="skill-item">Arduino / ESP</span>
-          <span class="skill-item">ROS</span>
-          <span class="skill-item">Docker / Git</span>
         </div>
       </div>
     </div>
@@ -802,9 +834,9 @@
           <p><strong>GPA: 4.0/4.0</strong></p>
           <p>Embedded Design, IoT, Wireless Sensor Networks</p>
           <p class="education-extra">
-            Working on specialized security modules for next-gen
-            cyber-physical integrations, exploring synergy between
-            real-time OS &amp; zero-trust frameworks.
+            Building hands-on experience in embedded system design, 
+            IoT systems and software, wireless sensor networks, 
+            and real-time operating systems (RTOS).
           </p>
         </div>
       </div>
@@ -818,9 +850,10 @@
           <p><strong>GPA: 3.96/4.0</strong></p>
           <p>Deep Learning, Real-time Embedded Systems, Computer Vision</p>
           <p class="education-extra">
-            Investigated advanced neural network architectures for UAV
-            detection and classification, bridging hardware constraints
-            and AI-driven optimization.
+            Gained advanced knowledge in deep learning, computer networks, 
+            computer vision, and wireless communication.
+            Investigated deep learning-based autoencoder for 
+            end-to-end communication using Spatial Modulation.
           </p>
         </div>
       </div>
@@ -831,77 +864,14 @@
           <span class="education-year">2014 - 2018</span>
           <h3>IOE, Pulchowk Campus</h3>
           <p><strong>B.E. in Electronics &amp; Communication</strong></p>
-          <p><strong>GPA: 3.6/4.0</strong></p>
+          <p><strong>GPA: 84.82/100</strong></p>
           <p>Advanced Electronics, Telecommunications, Embedded Programming</p>
           <p class="education-extra">
-            Laid foundational experience in circuit design,
-            microcontroller programming, and communications protocols.
+            Laid foundational knowledge in object oriented programming, 
+            electronics, micro-controller programming, 
+            and communication systems.
           </p>
         </div>
-      </div>
-    </div>
-  </section>
-  <hr class="section-divider" />
-
-  <!-- PUBLICATIONS SECTION -->
-  <section id="publications" class="publications-section">
-    <div class="section-header">
-      <h2>Publications &amp; Research</h2>
-      <p>Highlighted works demonstrating my research efforts</p>
-    </div>
-    <div class="pub-grid">
-      <!-- Card 1 -->
-      <div class="pub-card">
-        <h4>Autoencoder-based Spatial Modulation for Next-Gen Wireless</h4>
-        <p>
-          Proposed an autoencoder architecture enhancing Spatial Modulation
-          under high antenna correlation, boosting reliability in IoT environments.
-        </p>
-        <a href="https://ieeexplore.ieee.org/document/10504531" target="_blank">
-          IEEE Internet of Things Journal
-        </a>
-      <span class="link-separator"> | </span>
-      <a href="https://github.com/SelinaShrestha/Autoencoder-based-Spatial-Modulation" target="_blank">
-        GitHub
-      </a>
-      </div>
-      <!-- Card 2 -->
-      <div class="pub-card">
-        <h4>Crowd-Based Efficient Fault-Proof Localization for IoT &amp; MCS</h4>
-        <p>
-          Developed a novel anomaly detection mechanism for crowd-sourced
-          localization, providing near-real-time positioning accuracy
-          in dynamic settings.
-        </p>
-        <a href="https://ieeexplore.ieee.org/document/9408587" target="_blank">
-          IEEE Access
-        </a>
-      </div>
-      <!-- Card 3 -->
-      <div class="pub-card">
-        <h4>Lightweight Continuous Authentication for Mesh Networks</h4>
-        <p>
-          Achieved minimal overhead with a single-hash protocol for
-          ongoing node authentication, offering strong security
-          with negligible CPU cost.
-        </p>
-        <a href="https://ieeexplore.ieee.org/document/9641895" target="_blank">
-          IEEE Xplore
-        </a>
-        <span class="link-separator"> | </span>
-        <a href="https://github.com/SelinaShrestha/Continuous-Authentication" target="_blank">
-          GitHub
-        </a>
-      </div>
-      <!-- Card 4 -->
-      <div class="pub-card">
-        <h4>Drone Tracking &amp; Verification with Deep Neural Networks</h4>
-        <p>
-          Real-time validation of in-flight drones using Siamese
-          RPN-based tracking, ensuring reliable command authentication
-          in autonomous operations.
-        </p>
-        <a href="#" target="_blank">Conference Paper</a>
       </div>
     </div>
   </section>
@@ -925,19 +895,24 @@
             <strong>Tools:</strong> Python, Bash, CLIPS+ML, Zero Trust, Dual-Layer MACsec
           </p>
           <p>
-            Developed proof-of-concept (TRL4) security &amp; safety software
-            for mesh networks and autonomous drones. Integrated mutual and
-            continuous authentication features, along with behavior monitoring
-            and quarantine mechanisms, to maintain minimal performance overhead
-            in real-time scenarios.
-          </p>
-          <p>
-            Spearheaded dual-layer MACsec architecture for B.A.T.M.A.N IV routing,
-            enhancing overall network resilience. Demonstrated a 40% reduction
-            in the vulnerability window through rigorous testing and simulations,
-            while publishing internal best-practice guides to accelerate
-            Zero Trust adoption.
-          </p>
+            Developed proof-of-concept and TRL4 software for enhancing security and safety in mesh networks 
+            and autonomous drone systems, utilizing Python and Bash.
+        </p>
+    
+        <h5>Mesh Network Security</h5>
+        <p>
+            Implemented Zero Trust security principles in mesh networks, incorporating mutual and continuous 
+            authentication, behavior monitoring, and quarantine mechanisms with minimal performance impact. 
+            Additionally, spearheaded the implementation of a dual-layer MACsec architecture for B.A.T.M.A.N IV 
+            routing, further strengthening network security.
+        </p>
+    
+        <h5>Autonomous Drone Safety</h5>
+        <p>
+            Designed and developed a real-time decision engine using CLIPS, integrating it with machine learning 
+            models to enhance safety in autonomous drone operations. Utilized ROS and NATS for seamless integration, 
+            enabling efficient and reliable communication across drone subsystems.
+        </p>
         </div>
       </div>
 
@@ -950,20 +925,19 @@
           <h4>Technology Innovation Institute (Abu Dhabi, UAE)</h4>
           <p class="exp-tech">
             <strong>Publication:</strong>
-            <a href="https://ieeexplore.ieee.org/document/964189" target="_blank">IEEE (IoT Security)</a>
+            <a href="https://ieeexplore.ieee.org/document/9641895" target="_blank">Paper: IEEE Xplore</a>
           </p>
           <p>
-            Created a novel lightweight continuous authentication scheme for
-            mesh networks, employing just one hash, one MAC, and minimal
-            arithmetic operations to maintain high throughput and real-time
-            performance.
-          </p>
-          <p>
-            Achieved a 30% reduction in CPU and bandwidth usage compared to
-            standard cryptographic protocols, ensuring robust security
-            without sacrificing network efficiency. The resulting approach
-            was published in IEEE and garnered citation within IoT communities.
-          </p>
+            Developed a novel lightweight continuous authentication scheme for mesh networks, 
+            optimizing efficiency and security. The scheme requires only one hash, one MAC, 
+            and two addition/subtraction operations, compared to <i>k+2</i> operations in prior 
+            methods, where <i>k</i> is the number of authentications.
+        </p>
+    
+        <p>
+            The implementation achieved minimal CPU and bandwidth usage, demonstrating 
+            significant performance improvements. The results were presented in CommNet conference.
+        </p>
         </div>
       </div>
 
@@ -992,7 +966,67 @@
           </p>
         </div>
       </div>
+    </div>
+  </section>
+  <hr class="section-divider" />
 
+  <!-- PUBLICATIONS SECTION -->
+  <section id="publications" class="publications-section">
+    <div class="section-header">
+      <h2>Publications &amp; Projects</h2>
+    </div>
+    <div class="pub-grid">
+      <!-- Card 1 -->
+      <div class="pub-card">
+        <h4>Autoencoder-based Spatial Modulation for Next-Gen Wireless</h4>
+        <p>
+          Proposed deep learning autoencoder architectures for end-to-end communication enhancing Spatial Modulation
+          under high antenna correlation, boosting reliability in IoT environments.
+        </p>
+        <a href="https://ieeexplore.ieee.org/document/10504531" target="_blank">
+          Paper: IEEE Internet of Things Journal
+        </a>
+      <span class="link-separator"> | </span>
+      <a href="https://github.com/SelinaShrestha/Autoencoder-based-Spatial-Modulation" target="_blank">
+        Code: GitHub
+      </a>
+      </div>
+      <!-- Card 2 -->
+      <div class="pub-card">
+        <h4>Crowd-Based Efficient Fault-Proof Localization for IoT &amp; MCS</h4>
+        <p>
+          Developed a novel anomaly detection mechanism for crowd-sourced
+          localization, providing near-real-time positioning accuracy
+          in dynamic settings.
+        </p>
+        <a href="https://ieeexplore.ieee.org/document/9408587" target="_blank">
+          Paper: IEEE Access
+        </a>
+      </div>
+      <!-- Card 3 -->
+      <div class="pub-card">
+        <h4>Lightweight Continuous Authentication for Mesh Networks</h4>
+        <p>
+          Developed a novel secret sharing protocol for continuous device authentication in a mesh network, 
+          ensuring strong security with minimal overhead and negligible CPU cost.
+        </p>
+        <a href="https://ieeexplore.ieee.org/document/9641895" target="_blank">
+          Paper: IEEE Xplore
+        </a>
+        <span class="link-separator"> | </span>
+        <a href="https://github.com/SelinaShrestha/Continuous-Authentication" target="_blank">
+          Code: GitHub
+        </a>
+      </div>
+      <!-- Card 4 -->
+      <div class="pub-card">
+        <h4>Drone Tracking &amp; Verification with Deep Neural Networks</h4>
+        <p>
+          Developed a real-time drone tracking and authenticity verification system 
+          using a Siamese RPN tracker and sending control commands based on drone movements 
+          to authenticate in-flight responses.
+        </p>
+      </div>
     </div>
   </section>
   <hr class="section-divider" />
@@ -1001,25 +1035,25 @@
   <section id="contact" class="contact-section">
     <div class="section-header">
       <h2>Contact Me</h2>
-      <p>Feel free to connect via email, phone, or social platforms. Or send a direct message!</p>
+      <p>Feel free to connect via email, LinkedIn, or GitHub.</p>
     </div>
 
     <div class="contact-wrapper">
       <div class="contact-icons">
-        <a href="mailto:shresth4@uci.edu" title="Email">
-          <i class="fas fa-envelope"></i>
+        <a href="mailto:shresth4@uci.edu">
+          <i class="fa-solid fa-envelope"></i>
+          <span>shresth4@uci.edu</span>
         </a>
-        <a href="tel:4153165944" title="Phone">
-          <i class="fas fa-phone"></i>
+        <a href="https://github.com/SelinaShrestha" target="_blank">
+          <i class="fa-brands fa-github"></i>
+          <span>SelinaShrestha</span>
         </a>
-        <a href="https://www.linkedin.com/in/selinashrestha/" target="_blank" title="LinkedIn">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://github.com/your-github" target="_blank" title="GitHub">
-          <i class="fab fa-github"></i>
+        <a href="https://www.linkedin.com/in/selinashrestha/" target="_blank">
+          <i class="fa-brands fa-linkedin"></i>
+          <span>selinashrestha</span>
         </a>
       </div>
-
+      <p>Or send a direct message!</p>
       <div class="contact-form-box">
         <form action="https://formsubmit.co/shresth4@uci.edu" method="POST" class="contact-form">
           <!-- Disable Captcha -->
@@ -1046,11 +1080,11 @@
     <div class="footer-content">
       <p>&copy; <span id="currentYear"></span> Selina Shrestha. All Rights Reserved.</p>
       <p>
-        <a href="tel:4153165944">(415) 316-5944</a>
-        &middot;
         <a href="mailto:shresth4@uci.edu">shresth4@uci.edu</a>
         &middot;
-        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/selinashrestha/" target="_blank">LinkedIn</a>
+        &middot;
+        <a href="https://github.com/SelinaShrestha" target="_blank">GitHub</a>
       </p>
     </div>
   </footer>
@@ -1075,6 +1109,28 @@
 
     // Update year
     document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Copy text function
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        const feedback = document.createElement('div');
+        feedback.textContent = 'Copied!';
+        feedback.style.position = 'fixed';
+        feedback.style.bottom = '20px';
+        feedback.style.left = '50%';
+        feedback.style.transform = 'translateX(-50%)';
+        feedback.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+        feedback.style.color = '#2C3E50';
+        feedback.style.padding = '0.5rem 1rem';
+        feedback.style.borderRadius = '5px';
+        feedback.style.fontSize = '0.9rem';
+        document.body.appendChild(feedback);
+        
+        setTimeout(() => {
+          feedback.remove();
+        }, 2000);
+      });
+    }
   </script>
 </body>
 </html>
